@@ -1,0 +1,52 @@
+<h1>Jison PL0 Parser</h1>
+<div id="content">
+  <p class="loadfile">
+    <input type="file" id="examples" />
+  </p>
+  <p>
+  <nav>
+  <ul>
+    <% programs.sort.each do |p| %>
+      <li><a href="<%= p.name %>" <%=current?('/'+p.name)%>><%= p.name %></a></li>
+    <% end %>
+  </ul>
+  </nav>
+	<!-- Create a simple CodeMirror instance -->
+	<link rel="stylesheet" href="codemirror/codemirror.css">
+	<script src="codemirror/codemirror.js"></script>
+	<script src="codemirror/pl0g.js"></script>
+
+	<div id="form">
+	<form action="/save" method="post">
+	<textarea id="input" name="input" autofocus rows = "10"><%= source %></textarea>
+	<br/>
+	<div class="centered">
+		<label for="saveas">Save file as</label>
+		<input id="saveas" type="text" name="fname" title="name" pattern="\w+" />
+	</div>
+	</form>	  
+	</div>
+	<div class="centered">
+	<button id="parse" type="button">CLIK HERE FOR PARSING</button>
+	</div>
+  </p>
+  <p>
+    <div id="flash"><%= flash[:notice] if flash[:notice]%></div>
+  </p>
+  <div class="output"><!-- Output goes here! --> 
+<pre>
+<div id="output">
+</div>
+</pre>
+  </div>
+</div>
+
+<!-- Script para el CodeMirror -->
+<script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("input"), {
+      lineNumbers: true
+    });
+</script>
+
+<script type="text/javascript" src="/javascript/pl0.js"></script>
+<script type="text/javascript" src="/javascript/main.js"></script>

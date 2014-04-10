@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Jison for PL0 Based languages</title>
+    <link rel="icon" type="image/jpg" href="favicon.jpg" />
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  </head>
+  <body class="centered">
+      <div id="wrapper">
+	<header class="centered">
+		<div id="logo">
+			<img alt="ASA Parser Logo" src="/images/logo.png">
+		</div>
+	</header>
+        <nav>
+            <ul>
+        	<li> <a href="/grammar" target="_blank" title="Grammar" <%=current?("/grammar")%>>Grammar</a> </li>
+        	<li> <a href="/"  title="Home" <%=current?("/")%>>Home</a> </li>
+        	<li> <a href="/auth/google_oauth2" target="_blank" title="Google" <%=current?("/auth/google_oauth2")%>>Sign in with Google</a> </li>
+        	<li> <a href="/auth/github" target="_blank" title="Github" <%=current?("/auth/github")%>>Sign in with Github</a> </li>
+        	<li> <a href="http://en.wikipedia.org/wiki/Recursive_descent_parser#Example_parser"  target="_blank" title="Wikipedia">PL0</a> </li>
+        	<li> <a href="http://zaach.github.io/jison/" target="_blank" title="Jison">Jison</a> </li>
+        	<li> <a href="http://intridea.github.io/omniauth/" target="_blank" title="Omniauth">Intridea Omniauth</a> </li>
+        	<li> <a href="https://console.developers.google.com/project" target="_blank" title="Google Developers Console">Google Developers Console</a> </li>
+        	<li> <a href="https://github.com/SFEley/sinatra-flash" target="_blank" title="sinatra-flash">sinatra-flash</a> </li>
+        	<li> <a href="https://plus.google.com/u/0/+CasianoRodriguezLeon/" target="_blank" title="crguezl">crguezl</a> </li>
+          </ul>
+      </nav>
+      <section>
+	   <%= yield %>
+      </section>
+    </div>
+  </body>
+</html>
